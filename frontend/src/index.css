@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 255 255 255;
+  --fg: 0 0 0;
+  --muted: 82 82 82;
+  --line: 228 228 228;
+  --line-strong: 176 176 176;
+  --surface: 245 245 245;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 0 0 0;
+    --fg: 255 255 255;
+    --muted: 163 163 163;
+    --line: 38 38 38;
+    --line-strong: 92 92 92;
+    --surface: 16 16 16;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--fg));
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: rgb(var(--fg));
+    color: rgb(var(--bg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

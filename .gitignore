@@ -1,0 +1,23 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Secret dan konfigurasi lokal
+.env
+.env.*
+!.env.example
+
+# Log dan file sementara
+*.log
+npm-debug.log*
+tmp/
+.tmp/
+uploads/
+
+# Arsip dan OS
+*.zip
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
